@@ -15,6 +15,7 @@ public class Client {
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
+
             System.out.println("Connecté au serveur " + host + " sur le port " + port);
             System.out.println("Tapez une chaîne de caractères :");
             String userInput;
