@@ -18,20 +18,15 @@ public class ServeurC {
         listeDesCours.add(new Cours(3, "Reseaux et Securite", 8));
         listeDesCours.add(new Cours(4, "Developpement Web", 12));
 
-
         int port = 3000;
         try {
             serverSocket = new ServerSocket(port);
-
             System.out.println("Serveur se lance sur le port : " + port);
             while (true) {
                 Socket clientSocket = serverSocket.accept();
                 System.out.println("Nouveau client connecte°");
                 ServiceC serviceCours = new ServiceC(clientSocket);
-
-
                 ServiceC.setCourses(listeDesCours);
-
                 Thread t = new Thread(serviceCours);
                 t.start();
             }
